@@ -5,10 +5,10 @@ Create an agenda view for the Abstractions.io Conference.
 
 ### Features
 
-* [ ] Agenda view
-* [ ] Defaults to current day, or Thursday, August 18th, 2016
+* [x] Agenda view
+* [x] Defaults to current day, or Thursday, August 18th, 2016
 * [ ] Click on event, add to Google Calendar
-
+* [ ] Color-coded rooms
 
 ### Abstractions.io API
 

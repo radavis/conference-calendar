@@ -4,10 +4,13 @@ require "json"
 class Abstractions::Schedule
   class << self
     def all
-      Net::HTTP.get(uri)
+      response
     end
 
     private
+    def response
+      @_response ||= Net::HTTP.get(uri)
+    end
 
     def uri
       URI("#{Abstractions::BASE_URI}/api/schedule.json")
