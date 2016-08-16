@@ -10,9 +10,12 @@ var scheduleToEvents = function(schedule, date) {
 
   schedule.stages.forEach(function(stage) {
     stage.sessions.forEach(function(session) {
+      var title = session.talk.title + '\n';
+      title += 'by ' + session.speaker.name + '\n';
+      title += 'on ' + stage.name;
       var event = {
         id: session.id,
-        title: session.talk.title + ' - ' + session.speaker.name,
+        title: title,
         start: moment(date + 'T' + session.time_start).format(),
         end: moment(date + 'T' + session.time_end).format(),
         description: session.talk.description,
