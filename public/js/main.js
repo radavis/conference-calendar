@@ -45,6 +45,8 @@ var buildCalendar = function() {
       },
       defaultDate: date,
       defaultView: 'agendaDay',
+      minTime: "09:00:00",
+      maxTime: "22:00:00",
       editable: true,
       eventLimit: true,
       events: events
