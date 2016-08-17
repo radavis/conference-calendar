@@ -1,3 +1,10 @@
+var parseTime = function(hhmm) {
+  var hhmm = hhmm.toString();
+  var hour = hhmm.substr(0, 2);
+  var minute = hhmm.substr(2, 2);
+  return hour + ':' + minute;
+}
+
 var scheduleToEvents = function(schedule, date) {
   // {
   //   id:
@@ -16,12 +23,14 @@ var scheduleToEvents = function(schedule, date) {
       var event = {
         id: session.id,
         title: title,
-        start: moment(date + 'T' + session.time_start).format(),
-        end: moment(date + 'T' + session.time_end).format(),
+        start: moment(date + 'T' + parseTime(session.time_start)).format(),
+        end: moment(date + 'T' + parseTime(session.time_end)).format(),
         description: session.talk.description,
         room: session.room,
         stage: stage.name
       }
+      console.log(session.time_start);
+      console.log(event.start);
       result.push(event);
     })
   });
